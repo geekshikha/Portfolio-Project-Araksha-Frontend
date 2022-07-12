@@ -1,13 +1,13 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Input = styled.input`
-  width: 50%;
+  width: 30%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px 330px;
   border: 1px solid #ccc;
   border-radius: 4px;
 
   ::placeholder {
-    color: #1E3163;
+    color: #1e3163;
   }
 `;

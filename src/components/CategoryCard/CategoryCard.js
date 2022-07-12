@@ -1,174 +1,95 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Card from "react-bootstrap/Card";
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { Link } from "react-router-dom";
-
-import { fetchDeviceThunk } from "../../store/device/thunks";
-import { deviceSelector } from "../../store/device/selectors";
-
-const CategoryCard = () => {
-  const categories = useSelector(deviceSelector);
-  console.log("categories", categories);
-
-  const [searchInput, setSearchInput] = useState("");
-  const [filteredResults, setFilteredResults] = useState([]);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchDeviceThunk());
-  }, [dispatch]);
-
-  if (categories.length === 0) {
-    return <div>Loading...</div>;
-  }
-
-  const searchItems = (searchValue) => {
-    setSearchInput(searchValue);
-    if (searchInput !== "") {
-      const filteredData = categories.filter((item) => {
-        return (
-          item.title.toLowerCase().includes(searchInput.toLowerCase()) ||
-          item.title.toLowerCase().includes(searchInput.toLowerCase())
-        );
-      });
-      //console.log("filtered data", filteredData);
-      setFilteredResults(filteredData);
-    } else {
-      setFilteredResults(categories);
-    }
-  };
-
+const CategoryCard = (props) => {
+  const { title, imageUrl } = props;
   return (
-    <>
-      <div>
-        <Input
-          className="search"
-          type="search"
-          value={searchInput}
-          placeholder="Search...categories"
-          onChange={(e) => searchItems(e.target.value)}
-        />
+    <Conatainer className=" large menu-item">
+      <div
+        className="background-image"
+        style={{
+          backgroundImage: `url(${imageUrl})`,
+        }}
+      />
+      <div className="content">
+        <Link to={`/products/${props.id}`}>
+          <h1 className="title">{title}</h1>
+        </Link>
       </div>
-
-      <Container className="directory-menu">
-        {searchInput.length > 1 ? (
-          <>
-            {filteredResults.map((category) => (
-              <Card key={category.id}>
-                <Card.Img
-                  variant="top"
-                  src={category.image}
-                  alt=""
-                  style={{ width: "340px" }}
-                />
-                <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Title>{category.title}</Card.Title>
-                  <Card.Text>
-                    {
-                      <Link to={`/products/${category.id}`}>
-                        <button
-                          style={{
-                            backgroundColor: "#f81894",
-                            color: "white",
-                            borderRadius: "10px",
-                          }}
-                        >
-                          View Details
-                        </button>
-                      </Link>
-                    }
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            ))}
-          </>
-        ) : (
-          <>
-            {categories.map((category) => {
-              return (
-                <Card key={category.id}>
-                  <Card.Img
-                    variant="top"
-                    src={category.image}
-                    alt=""
-                    style={{ width: "340px" }}
-                  />
-                  <Card.Body>
-                    <Card.Title>{category.title}</Card.Title>
-                    <Card.Text>
-                      {
-                        <Link to={`/products/${category.id}`}>
-                          <button>View Details</button>
-                        </Link>
-                      }
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              );
-            })}
-          </>
-        )}
-      </Container>
-    </>
+    </Conatainer>
   );
 };
 
 export default CategoryCard;
 
-const Container = styled.div`
-  //   display: "flex";
-  //   flex-direction: "row";
-  width: 120px;
+const Conatainer = styled.div`
+  min-width: 30%;
+  height: 240px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 7.5px 15px;
+  overflow: hidden;
 
-  &.directory-menu {
+
+
+
+  &:hover {
+    cursor: pointer;
+
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+
+    & .content {
+      opacity: 0.9;
+    }
+  }
+
+  &.large {
+    height: 380px;
+  }
+
+  &:first-child {
+    margin-right: 7.5px;
+  }
+
+  &:last-child {
+    margin-left: 7.5px;
+  }
+
+  .background-image {
     width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
 
+  .content {
+    height: 50px;
+    padding: 0 25px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-`;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: white;
+    opacity: 0.7;
+    position: absolute;
 
-const Input = styled.input`
-  margin-left: 45%;
-  margin-bottom: 5%;
-  &.search {
-    padding: 1%;
-    border-radius: 10px;
-  }
-`;
+    .title {
+      font-weight: bold;
+      margin: 0 6px 0;
+      font-size: 22px;
+      color: #4a4a4a;
+    }
 
-// {
-//   categories.map((device) => {
-//     return (
-//       <Card key={device.id}>
-//         <Card.Img variant="top" src={device.image} alt="" />
-//         <Card.Body style={{ textAlign: "center" }}>
-//           <Card.Title>{device.title}</Card.Title>
-//           <Card.Text>
-//             {
-//               <Link to={`/products/${device.id}`}>
-//                 <button
-//                   style={{
-//                     backgroundColor: "#f81894",
-//                     color: "white",
-//                     borderRadius: "10px",
-//                   }}
-//                 >
-//                   View Details
-//                 </button>
-//               </Link>
-//             }
-//           </Card.Text>
-//         </Card.Body>
-//       </Card>
-//     );
-//   });
-// }
-// style={{
-//     width: "18rem",
-//     marginLeft: "30%",
-//     marginTop: "2%",
-//   }}
+    .subtitle {
+      font-weight: lighter;
+      font-size: 16px;
+    }
+`;

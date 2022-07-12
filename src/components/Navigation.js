@@ -1,16 +1,27 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectToken } from "../store/user/selectors";
+import { selectToken, selectUser } from "../store/user/selectors";
 import { logOut } from "../store/user/slice";
 import SvgLogo from "./SvgLogo";
+import CartIcon from "./Cart/CartIcon";
+import CartDropDown from "./Cart/CartDropDown";
+
+import { AiOutlineUser } from "react-icons/ai";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
 
+  const [cart, setCart] = useState(false);
+
   const dispatch = useDispatch();
 
   const token = useSelector(selectToken);
+  const user = useSelector(selectUser);
+
+  function onCartClose() {
+    setCart(false);
+  }
 
   return (
     <Nav>
@@ -25,15 +36,33 @@ export const Navigation = () => {
 
       <Menu open={open}>
         <MenuLink href="/products">Product</MenuLink>
-        <MenuLink href="/styled">Cart</MenuLink>
+        {/* <MenuLink href="">
+          {" "}
+          {/*<BsCart />}
+          <div onClick={() => setCart(!cart)}>
+            <CartIcon />
+          </div>
+  </MenuLink> */}
+        <div onClick={() => setCart(!cart)}>
+          <CartIcon />
+        </div>
         <MenuLink href="/leaflet">Track</MenuLink>
 
         {token ? (
-          <MenuLink onClick={() => dispatch(logOut())}>Logout</MenuLink>
+          <MenuLink>
+            <AiOutlineUser onClick={() => dispatch(logOut())} />{" "}
+            {user?.fullname}
+          </MenuLink>
         ) : (
-          <MenuLink href="/login">Login</MenuLink>
+          <MenuLink href="/login">
+            {" "}
+            <AiOutlineUser />
+            Login
+          </MenuLink>
         )}
       </Menu>
+
+      {cart && <CartDropDown onCartClose={onCartClose} />}
     </Nav>
   );
 };
