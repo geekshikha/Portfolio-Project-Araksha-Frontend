@@ -10,7 +10,7 @@ import {
 } from "../store/orders/selectors";
 import { orderData } from "../store/orders/thunks";
 import styled from "styled-components";
-import { Button } from "../styled";
+// import { Button } from "../styled";
 
 const PlaceOrderPage = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const PlaceOrderPage = () => {
   }
 
   const order = useSelector(orderCreateSelector);
-  console.log("order", order.id);
+  console.log("orderId", order.id);
   const shipping = useSelector(shippingAddressSelector);
   const items = useSelector(cartItemSelector);
   console.log("The shipping address", shipping);
@@ -38,6 +38,7 @@ const PlaceOrderPage = () => {
   );
 
   const dispatch = useDispatch();
+
   function placeOrderHandler() {
     console.log("in function");
     dispatch(orderData(totalPrice, shipping, paymentMethod, items));
@@ -82,12 +83,12 @@ const PlaceOrderPage = () => {
                         <div className="row">
                           <div>
                             <img
-                              src={item.imageUrl}
-                              alt={item.name}
+                              src={item.image}
+                              alt={item.title}
                               className="small"
                             />
                           </div>
-                          <div className="min-30">{item.name}</div>
+                          <div className="min-30">{item.title}</div>
                           <div>
                             {item.quantity} x {item.price} =
                             {item.quantity * item.price}€
@@ -113,13 +114,13 @@ const PlaceOrderPage = () => {
                   <p>{totalPrice}€</p>
                 </div>
               </li>
-              <Button
+              <button
                 type="button"
                 onClick={placeOrderHandler}
                 disabled={items.length === 0}
               >
                 Place Order
-              </Button>
+              </button>
             </ul>
           </div>
         </div>

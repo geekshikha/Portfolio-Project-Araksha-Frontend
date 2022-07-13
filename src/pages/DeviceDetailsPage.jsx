@@ -56,6 +56,7 @@ const DeviceDetailsPage = () => {
       ) : (
         <div>Loading</div>
       )}
+
       <CommentsForm />
     </Container>
   );

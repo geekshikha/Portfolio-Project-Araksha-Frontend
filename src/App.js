@@ -12,6 +12,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import ShippingAddress from "./components/ShippingAddress/ShippingAddress";
 import Payment from "./components/Payment/Payment";
 import PlaceOrderPage from "./pages/PlaceOrderPage";
+import TrackingPage from "./pages/TrackingPage";
 import Footer from "./components/Footer/Footer";
 import styled from "styled-components";
 import OrderDetails from "./pages/OrderDetails";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/placeorder" element={<PlaceOrderPage />} />
         <Route path="/order/:id" element={<OrderDetails />} />
+        <Route path="/track" element={<TrackingPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>

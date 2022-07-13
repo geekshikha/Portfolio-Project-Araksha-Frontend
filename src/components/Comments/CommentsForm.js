@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import BasicRating from "./Rating";
+
+import styled from "styled-components";
 
 const CommentsForm = () => {
   const [commentsArray, setCommentsArray] = useState([]);
@@ -20,7 +23,8 @@ const CommentsForm = () => {
   };
 
   return (
-    <div>
+    <Container>
+      <BasicRating />
       {commentsArray.map((comment) => {
         return (
           <div key={comment.id}>
@@ -48,7 +52,11 @@ const CommentsForm = () => {
         <br />
         <button type="submit">Send comment</button>
       </form>
-    </div>
+    </Container>
   );
 };
 export default CommentsForm;
+
+const Container = styled.div`
+  text-align: center;
+`;

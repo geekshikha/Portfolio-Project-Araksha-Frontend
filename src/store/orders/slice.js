@@ -21,6 +21,7 @@ export const orderSlice = createSlice({
     },
 
     userOrderDetails: (state, action) => {
+      console.log("orderin slice", action.payload);
       state.order = action.payload;
     },
   },

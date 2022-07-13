@@ -47,7 +47,7 @@ const ShippingAddress = () => {
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
-          ></input>
+          />
         </div>
         <div>
           <label htmlFor="address">Address</label>
@@ -58,7 +58,7 @@ const ShippingAddress = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
-          ></input>
+          />
         </div>
         <div>
           <label htmlFor="city">City</label>
@@ -69,7 +69,7 @@ const ShippingAddress = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
             required
-          ></input>
+          />
         </div>
         <div>
           <label htmlFor="postalCode">Postal Code</label>
@@ -80,7 +80,7 @@ const ShippingAddress = () => {
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
             required
-          ></input>
+          />
         </div>
 
         <div>
