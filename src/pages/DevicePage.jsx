@@ -23,11 +23,20 @@ const DevicePage = () => {
   //sorting part
   const compareByPrice = (a, b) => b.price - a.price;
   const compareByLowPrice = (a, b) => a.price - b.price;
+  // const compa
 
   const sortedProducts =
     sortBy === "price"
       ? [...allDevices].sort(compareByPrice)
       : [...allDevices].sort(compareByLowPrice);
+
+  // const sortedProducts =
+  // sortBy === "price"
+  //   ? [...allDevices].sort(compareByPrice)
+  //   : sortBy === "rating"
+  //   ? [...allDevices].sort(sortByRating)
+  //   : sortBy === "boo"
+  //   ?
 
   const changeSorting = (event) => {
     setSortby(event.target.value);

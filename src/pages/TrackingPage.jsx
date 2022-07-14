@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
-import { Button } from "../styled";
+import { Button, Title } from "../styled";
 import TrackingForm from "../components/Forms/TrackingForm";
+// import TrackingMap from "./TrackingMap.jsx";
+// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import TrackingLocationMap from "./TrackingLocationMap.jsx";
 
 const TrackingPage = () => {
   const [time, setTime] = useState("fetching");
-  const [location, setLocation] = useState(0);
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
   const [editMode, setEditMode] = useState(false);
 
   //   useEffect(() => {
@@ -42,26 +46,35 @@ const TrackingPage = () => {
   useEffect(() => {
     const socket = io.connect("http://localhost:4000");
     console.log(socket, "connected?");
-
+    //   console.log("getting connected", arg1, arg2);
     socket.on("send-location", (arg1, arg2) => {
-      console.log("getting connected", arg1, arg2);
+      setLatitude(arg1);
+      setLongitude(arg2);
     });
-  });
+
+    socket.on("time", (data) => setTime(data));
+  }, []);
 
   return (
     <div>
-      <h3> TrackingPage</h3>
+      <Title> TrackingPage</Title>
       <TrackingForm />
       <Button
         style={{ marginRight: 50 }}
         onClick={() => setEditMode(!editMode)}
       >
-        Start Tracking
+        Start Locating
       </Button>
       {editMode && (
         <div>
           <div>This is time {time}</div>
-          <div>This is location {location}</div>
+          <div>
+            This is location: latitude {latitude} - longitude {longitude}
+          </div>
+          <div>
+            {/* <TrackingMap latitude={latitude} longitide={longitude} /> */}
+            <TrackingLocationMap latitude={latitude} longitude={longitude} />
+          </div>
         </div>
       )}
     </div>

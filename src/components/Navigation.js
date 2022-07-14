@@ -46,7 +46,8 @@ export const Navigation = () => {
         <div onClick={() => setCart(!cart)}>
           <CartIcon />
         </div>
-        <MenuLink href="/track">Track</MenuLink>
+
+        {token ? <MenuLink href="/track">Track</MenuLink> : null}
 
         {token ? (
           <MenuLink>

@@ -8,13 +8,14 @@ import { loginSuccess, logOut, tokenStillValid } from "./slice";
 export const signUp = (name, email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
+    console.log("signin thunk", name, email, password);
     try {
       const response = await axios.post(`${apiUrl}/auth/signup`, {
         name,
         email,
         password,
       });
-
+      console.log(" thunk", response);
       dispatch(
         loginSuccess({ token: response.data.token, user: response.data.user })
       );

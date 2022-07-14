@@ -15,6 +15,8 @@ const OrderDetails = () => {
   const [ErrorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
 
+  console.log("config", config.paypalClient);
+
   // creates a paypal order
   const createOrder = (data, actions) => {
     return actions.order

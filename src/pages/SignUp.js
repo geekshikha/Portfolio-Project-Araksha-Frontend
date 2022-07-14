@@ -9,8 +9,8 @@ import { selectToken } from "../store/user/selectors";
 export const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
+  // const [phone, setPhone] = useState("");
+
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
@@ -44,18 +44,7 @@ export const SignUp = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Input
-            type="phone"
-            placeholder="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <Input
-            type="address"
-            placeholder="address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
+
           <Input
             type="password"
             placeholder="password"
