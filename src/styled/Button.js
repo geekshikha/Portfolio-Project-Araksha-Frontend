@@ -13,5 +13,3 @@ export const Button = styled.button`
     border: 2px solid #1e3163;
   }
 `;
-
-// #B22727

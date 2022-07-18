@@ -69,9 +69,9 @@ const TrackingPage = () => {
       </Button>
       {editMode && (
         <div>
-          <div>This is time {time}</div>
+          <div>The current time: {time}</div>
           <div>
-            This is location: latitude {latitude} - longitude {longitude}
+            The current location: latitude {latitude} - longitude {longitude}
           </div>
           <div>
             {/* <TrackingMap latitude={latitude} longitide={longitude} /> */}

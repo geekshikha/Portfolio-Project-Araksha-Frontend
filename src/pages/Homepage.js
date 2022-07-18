@@ -1,7 +1,3 @@
-// import { Title } from "../styled";
-// import { Link } from "react-router-dom";
-// import { LinkWord } from "../styled";
-
 import Hero from "../components/Hero/Hero";
 import ExampleProduct from "../components/EampleProduct/ExampleProduct";
 import Araksha from "../Videos/Araksha.mp4";
@@ -25,8 +21,10 @@ export default Homepage;
 const Section = styled.div`
   color: #fff;
   padding: 60px 160px;
-`;
 
-// margin-left: auto;
-// margin-right: auto;
-// display: block.
+  @media screen and (max-width: 768px) {
+    width: 300;
+    padding: 70px 0;
+    margin-top: 10rem;
+  }
+`;

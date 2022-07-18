@@ -82,72 +82,6 @@ const CategoryPage = () => {
 
 export default CategoryPage;
 
-//       <Container className="directory-menu">
-//         {searchInput.length > 1 ? (
-//           <>
-//             {filteredResults.map((category) => (
-//               <Card key={category.id}>
-//                 <Card.Img
-//                   variant="top"
-//                   src={category.image}
-//                   alt=""
-//                   style={{ width: "340px" }}
-//                 />
-//                 <Card.Body style={{ textAlign: "center" }}>
-//                   <Card.Title>{category.title}</Card.Title>
-//                   <Card.Text>
-//                     {
-//                       <Link to={`/products/${category.id}`}>
-//                         <button
-//                           style={{
-//                             backgroundColor: "#f81894",
-//                             color: "white",
-//                             borderRadius: "10px",
-//                           }}
-//                         >
-//                           View Details
-//                         </button>
-//                       </Link>
-//                     }
-//                   </Card.Text>
-//                 </Card.Body>
-//               </Card>
-//             ))}
-//           </>
-//         ) : (
-//           <>
-//             {categories.map((category) => {
-//               return (
-//                 <Card key={category.id}>
-//                   <Card.Img
-//                     variant="top"
-//                     src={category.image}
-//                     alt=""
-//                     style={{ width: "340px" }}
-//                   />
-//                   <Card.Body>
-//                     <Card.Title>{category.title}</Card.Title>
-//                     <Card.Text>
-//                       {
-//                         <Link to={`/products/${category.id}`}>
-//                           <button>View Details</button>
-//                         </Link>
-//                       }
-//                     </Card.Text>
-//                   </Card.Body>
-//                 </Card>
-//               );
-//             })}
-//           </>
-//         )}
-//       </Container>
-//       {categories.map((category) => {
-//         return <SpecificDevice devices={category.devices} />;
-//       })}
-//     </>
-//   );
-// };
-
 const Container = styled.div`
   //   display: "flex";
   //   flex-direction: "row";
@@ -172,36 +106,3 @@ const Input = styled.input`
     border-radius: 10px;
   }
 `;
-
-// {
-//   categories.map((device) => {
-//     return (
-//       <Card key={device.id}>
-//         <Card.Img variant="top" src={device.image} alt="" />
-//         <Card.Body style={{ textAlign: "center" }}>
-//           <Card.Title>{device.title}</Card.Title>
-//           <Card.Text>
-//             {
-//               <Link to={`/products/${device.id}`}>
-//                 <button
-//                   style={{
-//                     backgroundColor: "#f81894",
-//                     color: "white",
-//                     borderRadius: "10px",
-//                   }}
-//                 >
-//                   View Details
-//                 </button>
-//               </Link>
-//             }
-//           </Card.Text>
-//         </Card.Body>
-//       </Card>
-//     );
-//   });
-// }
-// style={{
-//     width: "18rem",
-//     marginLeft: "30%",
-//     marginTop: "2%",
-//   }}

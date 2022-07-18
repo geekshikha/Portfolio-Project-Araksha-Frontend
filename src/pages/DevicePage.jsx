@@ -25,9 +25,9 @@ const DevicePage = () => {
   // const deviceRating = allDeviceWithRating.map((rating) => rating);
   // console.log("newrat", deviceRating);
 
-  console.log("allDevices", allDevices);
-  // console.log("rating", deviceWithRating);
-  console.log("newrat", deviceWithRating);
+  // console.log("allDevices", allDevices);
+  // // console.log("rating", deviceWithRating);
+  // console.log("newrat", deviceWithRating);
 
   const dispatch = useDispatch();
   useEffect(() => {

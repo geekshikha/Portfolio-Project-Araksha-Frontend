@@ -34,7 +34,6 @@ const Hero = () => {
     console.log(inView);
   }, [inView]);
 
-  //   <HeroImage className="guy" src="./images/hero-guy-1.png" />
   return (
     <>
       <HeroSection id="hero">
@@ -65,24 +64,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// <CharacterContainer>
-// <ImageCharacter
-//   dragConstraints={dragConstraints}
-//   className="one"
-//   src="./images/image 1.png"
-// />
-// <ImageCharacter
-//   dragConstraints={dragConstraints}
-//   className="two"
-//   src="./images/image 2.png"
-// />
-// <ImageCharacter
-//   variants={variants}
-//   whileHover="hover"
-//   drag
-//   dragConstraints={dragConstraints}
-//   className="three"
-//   src="./images/image 3.png"
-// />
-// </CharacterContainer>

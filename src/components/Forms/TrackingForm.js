@@ -34,15 +34,3 @@ export default TrackingForm;
 const Container = styled.div`
   text-align: center;
 `;
-
-// <form onSubmit={handleFormSubmit}>
-// <label htmlFor="serialNumber">Serial Number</label>
-// <input
-//   type="text"
-//   id="serialNumber"
-//   placeholder="Enter serial number of device"
-//   value={serialNumber}
-//   onChange={(e) => setSerialNumber(e.target.value)}
-//   required
-// />
-// </form>

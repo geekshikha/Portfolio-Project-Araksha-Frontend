@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BasicRating from "./Rating";
 import { FiSend } from "react-icons/fi";
+import { Button } from "../../styled/Button";
 
 import styled from "styled-components";
 
@@ -30,10 +31,10 @@ const CommentsForm = () => {
         return (
           <div key={comment.id}>
             <p>
-              <b>Name:</b> {comment.name}
+              <b className="color">Name:</b> {comment.name}
             </p>
             <p>
-              <b>Comment:</b> {comment.comment}
+              <b className="color">Comment:</b> {comment.comment}
             </p>
           </div>
         );
@@ -51,11 +52,11 @@ const CommentsForm = () => {
         />
         <br />
         <br />
-        <button type="submit">
+        <Button type="submit">
           {" "}
           <FiSend />
           Send
-        </button>
+        </Button>
       </form>
     </Container>
   );
@@ -64,4 +65,8 @@ export default CommentsForm;
 
 const Container = styled.div`
   text-align: center;
+
+  .color {
+    color: #c3a1a0;
+  }
 `;

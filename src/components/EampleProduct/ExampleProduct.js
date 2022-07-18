@@ -10,7 +10,7 @@ import {
   ClientImage,
   ClientTextWrapper,
 } from "./ExampleProductStyles";
-// <ClientImage src={`../images/products/${el.name}.png`} />
+
 import { ProductsData } from "./DataExample";
 
 const ExampleProduct = () => {

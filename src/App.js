@@ -17,7 +17,6 @@ import Footer from "./components/Footer/Footer";
 import styled from "styled-components";
 import OrderDetails from "./pages/OrderDetails";
 import AboutUsPage from "./pages/AboutUsPage";
-// import AboutAraksha from "./pages/AboutAraksha";
 
 function App() {
   const dispatch = useDispatch();

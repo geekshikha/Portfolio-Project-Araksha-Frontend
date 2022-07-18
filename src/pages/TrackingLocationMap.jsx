@@ -58,5 +58,3 @@ export default function Map(props) {
     </MapContainer>
   );
 }
-
-// icon={markerIcon} key={idx}

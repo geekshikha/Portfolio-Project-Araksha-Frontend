@@ -31,7 +31,7 @@ const DeviceDetailsPage = () => {
   };
 
   return (
-    <Container>
+    <Section>
       {deviceDetails ? (
         <Container>
           <div className="container">
@@ -51,6 +51,17 @@ const DeviceDetailsPage = () => {
                 </button>
               </div>
             </div>
+            <p className="pick">choose size</p>
+            <div className="sizes">
+              <div className="size">XS</div>
+              <div className="size">S</div>
+              <div className="size">M</div>
+              <div className="size">L</div>
+              <div className="size">XL</div>
+            </div>
+            <div style={{ marginLeft: "540px", letterSpacing: ".4em" }}>
+              ⭐⭐⭐⭐☆
+            </div>
           </div>{" "}
         </Container>
       ) : (
@@ -58,51 +69,16 @@ const DeviceDetailsPage = () => {
       )}
 
       <CommentsForm />
-    </Container>
+    </Section>
   );
 };
 
 export default DeviceDetailsPage;
 
-// <div class="container">
-//       <div class="images">
-//         <img src={deviceDetails.image} alt="" />
-//       </div>
-//       <div class="slideshow-buttons">
-//         <div class="one"></div>
-//         <div class="two"></div>
-//         <div class="three"></div>
-//         <div class="four"></div>
-//       </div>
-//       <p class="pick">choose size</p>
-//       <div class="sizes">
-//         <div class="size">5</div>
-//         <div class="size">6</div>
-//         <div class="size">7</div>
-//         <div class="size">8</div>
-//         <div class="size">9</div>
-//         <div class="size">10</div>
-//         <div class="size">11</div>
-//         <div class="size">12</div>
-//       </div>
-//       <div class="product">
-//         <p>Women's Running Shoe</p>
-//         <h1>Nike Epic React Flyknit</h1>
-//         <h2>$150</h2>
-//         <p class="desc">
-//           The Nike Epic React Flyknit foam cushioning is responsive yet
-//           #E0C9CB-weight, durable yet soft. This creates a sensation that not only
-//           enhances the feeling of moving forward, but makes running feel fun,
-//           too.
-//         </p>
-//         <div class="buttons">
-//           <button class="add">Add to Cart</button>
-//           <button class="like">
-//             <span>♥</span>
-//           </button>
-//         </div>
-//       </div>
-//     </div>
+const Section = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 
 const Container = styled.div`
   display: grid;
@@ -140,9 +116,9 @@ const Container = styled.div`
   }
 
   img {
-    width: 390px;
+    width: 40%;
 
-    margin-top: 47px;
+    margin-top: 7px;
   }
 
   .product {
@@ -188,5 +164,41 @@ const Container = styled.div`
 
   .like {
     width: 22%;
+  }
+
+  .sizes {
+    display: grid;
+    color: #d9aab7;
+    grid-template-columns: repeat(auto-fill, 30px);
+    width: 60%;
+    grid-gap: 4px;
+    margin-left: 20px;
+    margin-top: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .pick {
+    margin-top: 11px;
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+
+  .size {
+    padding: 9px;
+    border: 1px solid #e0c9cb;
+    font-size: 0.7em;
+    text-align: center;
+    &:hover {
+      background: #ba7e7e;
+      color: #f5f5f5;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .focus {
+    background: #ba7e7e;
+    color: #f5f5f5;
   }
 `;

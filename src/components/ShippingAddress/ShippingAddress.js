@@ -96,61 +96,6 @@ const ShippingAddress = () => {
   );
 };
 
-// <Form className="form" onSubmit={shippingAddressSubmitHandler}>
-//   <div>
-//     <h1>Shipping Address</h1>
-//   </div>
-//   <div>
-//     <label htmlFor="fullName">Full Name</label>
-//     <input
-//             type="text"
-//             id="fullName"
-//             placeholder="Enter full name"
-//             value={fullName}
-//             onChange={(e) => setFullName(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="address">Address</label>
-//           <input
-//             type="text"
-//             id="address"
-//             placeholder="Enter address"
-//             value={address}
-//             onChange={(e) => setAddress(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="city">City</label>
-//           <input
-//             type="text"
-//             id="city"
-//             placeholder="Enter city"
-//             value={city}
-//             onChange={(e) => setCity(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="postalCode">Postal Code</label>
-//           <input
-//             type="text"
-//             id="postalCode"
-//             placeholder="Enter postal code"
-//             value={postalCode}
-//             onChange={(e) => setPostalCode(e.target.value)}
-//             required
-//           />
-//         </div>
-
-//         <div>
-//           <label />
-//           <button>Continue</button>
-//         </div>
-//       </Form>
-
 export default ShippingAddress;
 
 const Container = styled.div`
@@ -187,32 +132,3 @@ const Container = styled.div`
   //   @include btn;
   // }
 `;
-
-// import React, { useState } from "react";
-// import Box from "@mui/material/Box";
-
-// import FormControl from "@mui/material/FormControl";
-// import FormHelperText from "@mui/material/FormHelperText";
-// import Input from "@mui/material/Input";
-// import InputLabel from "@mui/material/InputLabel";
-// import OutlinedInput from "@mui/material/OutlinedInput";
-
-// export default function ComposedTextField() {
-//   const [name, setName] = useState("");
-
-//   const handleChange = (event) => {
-//     setName(event.target.value);
-//   };
-
-//   return (
-//     <FormControl>
-//       <InputLabel htmlFor="component-outlined">Name</InputLabel>
-//       <OutlinedInput
-//         id="component-outlined"
-//         value={name}
-//         onChange={handleChange}
-//         label="Name"
-//       />
-//     </FormControl>
-//   );
-// }
