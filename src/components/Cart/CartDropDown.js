@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { cartItemSelector } from "../../store/cart/selectors";
 import CartItem from "./CartItem";
 import styled from "styled-components";
+import { Button } from "../../styled";
 
 const CartDropDown = (props) => {
   const cartItems = useSelector(cartItemSelector);
@@ -20,7 +21,7 @@ const CartDropDown = (props) => {
         <CartItem />
       </div>
       {cartItems.length ? (
-        <button onClick={navigateToCheckout}>GO TO CHECKOUT</button>
+        <Button onClick={navigateToCheckout}>GO TO CHECKOUT</Button>
       ) : null}
     </Container>
   );
@@ -39,7 +40,7 @@ const Container = styled.div`
   background-color: white;
   top: 90px;
   right: 40px;
-  z-index: 5;
+  z-index: 15;
 
   .empty-message {
     font-size: 18px;

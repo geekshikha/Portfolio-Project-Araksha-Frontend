@@ -4,6 +4,7 @@ import { Button, Title } from "../styled";
 import TrackingForm from "../components/Forms/TrackingForm";
 // import TrackingMap from "./TrackingMap.jsx";
 // import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { FiMapPin } from "react-icons/fi";
 import TrackingLocationMap from "./TrackingLocationMap.jsx";
 
 const TrackingPage = () => {
@@ -46,8 +47,9 @@ const TrackingPage = () => {
   useEffect(() => {
     const socket = io.connect("http://localhost:4000");
     console.log(socket, "connected?");
-    //   console.log("getting connected", arg1, arg2);
+
     socket.on("send-location", (arg1, arg2) => {
+      console.log("getting connected", arg1, arg2);
       setLatitude(arg1);
       setLongitude(arg2);
     });
@@ -56,14 +58,14 @@ const TrackingPage = () => {
   }, []);
 
   return (
-    <div>
-      <Title> TrackingPage</Title>
+    <div style={{ textAlign: "center", height: "70vh", marginTop: "30px" }}>
+      <Title>Find Your Loved Ones ❤️</Title>
       <TrackingForm />
       <Button
         style={{ marginRight: 50 }}
         onClick={() => setEditMode(!editMode)}
       >
-        Start Locating
+        <FiMapPin /> Find
       </Button>
       {editMode && (
         <div>

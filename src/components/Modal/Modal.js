@@ -15,10 +15,11 @@ const Modal = ({ showModal, toggleModal }) => {
   const keyPress = useCallback(
     (e) => {
       if (e.key && showModal) {
-        toggleModal();
+        // toggleModal();
       }
     },
-    [showModal, toggleModal]
+    // [showModal, toggleModal]
+    [showModal]
   );
 
   useEffect(() => {

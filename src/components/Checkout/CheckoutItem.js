@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addItem, removeItem, clearItem } from "../../store/cart/slice";
 import styled from "styled-components";
+import { MdDeleteForever } from "react-icons/md";
 
 const CheckoutItem = ({ item }) => {
   const { title, price, quantity, image } = item;
@@ -26,12 +27,13 @@ const CheckoutItem = ({ item }) => {
       </span>
       <span className="price">€{price}</span>
       <div className="remove-button" onClick={() => dispatch(clearItem(item))}>
-        &#10005;
+        <MdDeleteForever style={{ fontSize: "25px" }} />
       </div>
     </Container>
   );
 };
 
+// &#10005;
 export default CheckoutItem;
 
 const Container = styled.div`

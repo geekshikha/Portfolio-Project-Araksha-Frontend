@@ -11,6 +11,8 @@ import styled from "styled-components";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import Fab from "@mui/material/Fab";
+import EditIcon from "@mui/icons-material/Edit";
 
 const ShippingAddress = () => {
   const navigate = useNavigate();
@@ -82,7 +84,12 @@ const ShippingAddress = () => {
         </FormControl>
 
         <div style={{ textAlign: "center" }}>
-          <Button onClick={shippingAddressSubmitHandler}>Continue</Button>
+          <Button onClick={shippingAddressSubmitHandler}>
+            {" "}
+            <Fab color="primary" aria-label="edit">
+              <EditIcon />
+            </Fab>
+          </Button>
         </div>
       </Container>
     </div>

@@ -10,7 +10,7 @@ import {
 } from "../store/orders/selectors";
 import { orderData } from "../store/orders/thunks";
 import styled from "styled-components";
-// import { Button } from "../styled";
+import { Button } from "../styled";
 
 const PlaceOrderPage = () => {
   const navigate = useNavigate();
@@ -57,7 +57,14 @@ const PlaceOrderPage = () => {
                   <strong>Name:</strong>
                   {shipping.fullName} <br />
                   <strong>Address: </strong>
-                  {shipping.address}, {shipping.city}, {shipping.postalCode},{" "}
+                  <li>{shipping.address},</li>{" "}
+                  <li>
+                    <strong>City: </strong>
+                    {shipping.city},
+                  </li>
+                  <li>
+                    <strong>PostalCode:</strong> {shipping.postalCode}
+                  </li>
                 </p>
               </div>
             </li>
@@ -65,7 +72,7 @@ const PlaceOrderPage = () => {
               <div className="card card-body">
                 <h2>Payment</h2>
                 <p>
-                  <strong>Method:</strong>
+                  <strong>Method: </strong>
                   {paymentMethod}
                   <br />
                 </p>
@@ -114,13 +121,13 @@ const PlaceOrderPage = () => {
                   <p>{totalPrice}€</p>
                 </div>
               </li>
-              <button
+              <Button
                 type="button"
                 onClick={placeOrderHandler}
                 disabled={items.length === 0}
               >
                 Place Order
-              </button>
+              </Button>
             </ul>
           </div>
         </div>
@@ -134,13 +141,13 @@ export default PlaceOrderPage;
 const Section = styled.div`
   display: flex;
   .card {
-    border: 0.1rem #c0c0c0 solid;
-    background-color: #f8f8f8;
+    border: 0.1rem #0077b6 solid;
+    background-color: #caf0f8;
     border-radius: 0.5rem;
-    margin: 1rem;
+    margin: 1.5rem 6rem;
   }
   .card-body {
-    padding: 1rem;
+    padding: 2rem;
   }
   .card-body > * {
     margin-bottom: 0.5rem;
@@ -148,6 +155,7 @@ const Section = styled.div`
 
   .row {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
 

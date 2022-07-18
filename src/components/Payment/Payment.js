@@ -7,6 +7,7 @@ import { shippingAddressSelector } from "../../store/orders/selectors";
 import FakePaymentLayout from "./FakePaymentLayout";
 import styled from "styled-components";
 import { Button } from "../../styled/Button";
+import { FcCurrencyExchange } from "react-icons/fc";
 
 const Payment = () => {
   const [payment, setPaymentMethod] = useState("PayPal");
@@ -66,7 +67,10 @@ const Payment = () => {
             <label htmlFor="stripe">Stripe</label>
           </div>
           <div>
-            <Button>Continue</Button>
+            <Button style={{ width: "30%" }}>
+              {" "}
+              <FcCurrencyExchange /> Continue
+            </Button>
           </div>
 
           <FakePaymentLayout />

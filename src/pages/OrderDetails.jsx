@@ -5,6 +5,7 @@ import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { config } from "../config";
 import { orderCreateSelector } from "../store/orders/selectors";
 import { showMessageWithTimeout } from "../store/appState/thunks";
+import styled from "styled-components";
 
 const OrderDetails = () => {
   const order = useSelector(orderCreateSelector);
@@ -53,7 +54,7 @@ const OrderDetails = () => {
           "success",
           true,
           ` Thank you for your purchase!, Your paypent ref. is: ${order.id}`,
-          3000
+          5000
         )
       );
     });
@@ -78,7 +79,7 @@ const OrderDetails = () => {
   console.log(3, ErrorMessage);
 
   return (
-    <div>
+    <Container>
       <div className="grid-container">
         <div className="orders">
           <h1>Order Id: {order.id}</h1>
@@ -129,8 +130,26 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
 export default OrderDetails;
+
+const Container = styled.div`
+  text-align: center;
+  // border: 0.1rem #0077b6 solid;
+  background-color: #e8f9fd;
+  border-radius: 0.5rem;
+  margin: 1.5rem 9rem;
+  padding: 2rem;
+  // .card {
+  //   border: 0.1rem #0077b6 solid;
+  //   background-color: #caf0f8;
+  //   border-radius: 0.5rem;
+  //   margin: 1.5rem 6rem;
+  // }
+  ul {
+    list-style-type: none;
+  }
+`;

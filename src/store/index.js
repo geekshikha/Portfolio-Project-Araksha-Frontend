@@ -5,6 +5,7 @@ import userReducer from "./user/slice";
 import deviceSlice from "./device/slice";
 import cartSlice from "./cart/slice";
 import orderSlice from "./orders/slice";
+import ratingSlice from "./rating/slice";
 
 export default configureStore({
   reducer: {
@@ -13,5 +14,6 @@ export default configureStore({
     device: deviceSlice,
     cart: cartSlice,
     orders: orderSlice,
+    rating: ratingSlice,
   },
 });

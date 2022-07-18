@@ -16,6 +16,8 @@ import TrackingPage from "./pages/TrackingPage";
 import Footer from "./components/Footer/Footer";
 import styled from "styled-components";
 import OrderDetails from "./pages/OrderDetails";
+import AboutUsPage from "./pages/AboutUsPage";
+// import AboutAraksha from "./pages/AboutAraksha";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +31,9 @@ function App() {
       <Navigation />
       <MessageBox />
       <Routes>
-        {/*  <Route path="/" element={<Homepage />} /> */}
+        <Route path="/" element={<Homepage />} />
+        <Route path="/aboutus" element={<AboutUsPage />} />
+
         <Route path="/products" element={<CategoryPage />} />
         <Route path="/products/:id" element={<DevicePage />} />
         <Route path="/devices/:id" element={<DeviceDetailsPage />} />
@@ -39,6 +43,7 @@ function App() {
         <Route path="/placeorder" element={<PlaceOrderPage />} />
         <Route path="/order/:id" element={<OrderDetails />} />
         <Route path="/track" element={<TrackingPage />} />
+
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>

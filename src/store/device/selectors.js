@@ -5,3 +5,6 @@ export const categoryWithDeviceSelector = (reduxState) =>
 
 export const deviceDetailSelector = (reduxState) =>
   reduxState.device.deviceDetails;
+
+// export const deviceRatingSelector = (reduxState) =>
+//   reduxState.device.categoriesWithDevices.map((device) => device.ratings);

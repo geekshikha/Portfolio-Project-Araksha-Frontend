@@ -163,8 +163,10 @@ const Container = styled.div`
 `;
 
 const Input = styled.input`
-  margin-left: 45%;
-  margin-bottom: 5%;
+  // margin-left: 45%;
+  // margin-bottom: 5%;
+  margin: 5% 45%;
+  border: 1px solid #161ade;
   &.search {
     padding: 1%;
     border-radius: 10px;

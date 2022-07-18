@@ -35,6 +35,7 @@ export const Navigation = () => {
       </Hamburger>
 
       <Menu open={open}>
+        <MenuLink href="/aboutus">AboutUs</MenuLink>
         <MenuLink href="/products">Product</MenuLink>
         {/* <MenuLink href="">
           {" "}
@@ -51,8 +52,8 @@ export const Navigation = () => {
 
         {token ? (
           <MenuLink>
-            <AiOutlineUser onClick={() => dispatch(logOut())} />{" "}
-            {user?.fullname}
+            <AiOutlineUser onClick={() => dispatch(logOut())} />
+            {user?.name}
           </MenuLink>
         ) : (
           <MenuLink href="/login">

@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import styled from "styled-components";
 
 const TrackingForm = () => {
   const [serialNumber, setSerialNumber] = useState("");
@@ -8,18 +12,37 @@ const TrackingForm = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <label htmlFor="serialNumber">Serial Number</label>
-      <input
-        type="text"
-        id="serialNumber"
-        placeholder="Enter serial number of device"
-        value={serialNumber}
-        onChange={(e) => setSerialNumber(e.target.value)}
-        required
-      />
-    </form>
+    <Container>
+      <FormControl className="form" onSubmit={handleFormSubmit}>
+        <InputLabel htmlFor="component-outlined">
+          Enter Serial Number
+        </InputLabel>
+        <OutlinedInput
+          id="component-outlined"
+          value={serialNumber}
+          onChange={(e) => setSerialNumber(e.target.value)}
+          required
+          label="SerialNumber"
+        />
+      </FormControl>
+    </Container>
   );
 };
 
 export default TrackingForm;
+
+const Container = styled.div`
+  text-align: center;
+`;
+
+// <form onSubmit={handleFormSubmit}>
+// <label htmlFor="serialNumber">Serial Number</label>
+// <input
+//   type="text"
+//   id="serialNumber"
+//   placeholder="Enter serial number of device"
+//   value={serialNumber}
+//   onChange={(e) => setSerialNumber(e.target.value)}
+//   required
+// />
+// </form>

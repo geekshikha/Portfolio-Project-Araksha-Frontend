@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BasicRating from "./Rating";
+import { FiSend } from "react-icons/fi";
 
 import styled from "styled-components";
 
@@ -50,7 +51,11 @@ const CommentsForm = () => {
         />
         <br />
         <br />
-        <button type="submit">Send comment</button>
+        <button type="submit">
+          {" "}
+          <FiSend />
+          Send
+        </button>
       </form>
     </Container>
   );

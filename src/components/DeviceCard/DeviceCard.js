@@ -2,9 +2,14 @@ import React from "react";
 
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { BsCartPlus } from "react-icons/bs";
 
 const DeviceCard = (props) => {
-  const { id, title, price, imageUrl, description } = props;
+  const { id, title, price, imageUrl, description, ratings } = props;
+  console.log("props", props);
+
+  const star = ratings.map((rating) => rating.star);
+  console.log("star", star);
 
   return (
     <Container className="wrapper">
@@ -14,9 +19,19 @@ const DeviceCard = (props) => {
           <h2 className="card__title">{title}</h2>
           <p className="card__description">{description}</p>
           <h3 className="card__price">{price}</h3>
+          <p> ⭐: {star}</p>
 
           <Link to={`/devices/${id}`}>
-            <button className="card__btn">View Details</button>
+            <button className="card__btn">
+              View Details
+              <BsCartPlus
+                style={{
+                  marginLeft: "40px",
+                  color: "f38ba0",
+                  fontSize: "30px",
+                }}
+              />
+            </button>
           </Link>
         </div>
       </div>
