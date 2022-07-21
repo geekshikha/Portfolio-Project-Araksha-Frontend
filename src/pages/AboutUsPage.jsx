@@ -13,7 +13,11 @@ const AboutUsPage = () => {
         <Section className="content">
           <Section1 className="text-content">
             The Araksha Story
-            <p>"A picture is worth a thousand words" </p>
+            <p style={{ fontSize: "medium" }}>
+              "Works like a charm. I love the ease of the app and would highly
+              recommend purchasing their products. Just made my life so much
+              easier." <h3>Anna, mother of a girl and a cat.</h3>
+            </p>
           </Section1>
         </Section>
       </Parallax>

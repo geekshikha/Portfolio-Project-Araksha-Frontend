@@ -35,7 +35,7 @@ export const Navigation = () => {
       </Hamburger>
 
       <Menu open={open}>
-        <MenuLink href="/aboutus">AboutUs</MenuLink>
+        <MenuLink href="/aboutus">About</MenuLink>
         <MenuLink href="/products">Product</MenuLink>
         {/* <MenuLink href="">
           {" "}
