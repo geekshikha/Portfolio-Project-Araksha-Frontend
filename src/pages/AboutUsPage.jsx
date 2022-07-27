@@ -16,7 +16,7 @@ const AboutUsPage = () => {
             <p style={{ fontSize: "medium" }}>
               "Works like a charm. I love the ease of the app and would highly
               recommend purchasing their products. Just made my life so much
-              easier." <h3>Anna, mother of a girl and a cat.</h3>
+              easier." <h3>Anna, mother of a cat.</h3>
             </p>
           </Section1>
         </Section>
@@ -25,7 +25,7 @@ const AboutUsPage = () => {
       <Parallax strength={300} blur={{ min: -5, max: 15 }} bgImage={First}>
         <Section className="content">
           <Section1 className="text-content">
-            We Design your emotions ❤️
+            Lose your knack for losing things. 🖤
           </Section1>
         </Section>
       </Parallax>
@@ -42,7 +42,6 @@ const AboutUsPage = () => {
         <Section className="content">
           <Section1 className="text-content" style={{ color: "#79dae8" }}>
             {" "}
-            Just love & care for your people, without any worries ❤️
             <p>
               Our value for our customers is our ability to accurately estimated
               performance and believes in having a good time while doing what we
