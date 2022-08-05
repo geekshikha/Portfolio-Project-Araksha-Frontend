@@ -40,8 +40,8 @@ const Hero = () => {
         <HeroImage className="pattern" src="./images/hero2.png" />
 
         <HeroContent>
-          <Heading>We care for your loved ones!</Heading>
-          <HeroText>We give shape to your emotions!</HeroText>
+          <Heading>Never loose your things again!</Heading>
+          <HeroText>We are designify!</HeroText>
           <ButtonContainer ref={ref}>
             <ButtonWrapper>
               <HeroButton

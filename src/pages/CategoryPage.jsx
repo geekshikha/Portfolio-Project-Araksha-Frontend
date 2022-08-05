@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import Card from "react-bootstrap/Card";
+
 import styled from "styled-components";
-// import SpecificDevice from "../SpecificDevice/SpecificDevice";
-// import { Link } from "react-router-dom";
+
 import CategoryCard from "../components/CategoryCard/CategoryCard";
 
 import { fetchCategoriesThunk } from "../store/device/thunks";
