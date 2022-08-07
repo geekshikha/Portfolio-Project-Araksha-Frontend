@@ -1,7 +1,7 @@
 <h1 align="center">Araksha</h1>
 <h2>Araksha is created to help people locate lost objects. We often encounter pamphlets of missing pets and bikes in our neighbourhood. It is an e-commerce website selling devices with GPS module to locate the object with real-time location.</h2>
 
-[Check the website live]("https://araksha.netlify.app/")
+[Check the website live](https://araksha.netlify.app/)
 
 <h1 align="center">
 	<img
@@ -49,12 +49,12 @@
 
 <h2>Different Phases involved in Project creation :</h2>
 
-- [Wireframe]("https://wireframepro.mockflow.com/editor.jsp?editor=off&publicid=M5e3777370e2037ec122b0dcc469b0b041659877718920&projectid=MGXE5uueSnb&perm=Owner#/page/D147cfae337c100d6016eff71dc015227") - Low fidelity wireframes
-- [Database Diagram]("https://dbdiagram.io/d/62c2aa8669be0b672c937241") - To view the relations between tables
-- [Project Board]("https://github.com/users/geekshikha/projects/4") - To view the user stories
+- [Wireframe](https://wireframepro.mockflow.com/editor.jsp?editor=off&publicid=M5e3777370e2037ec122b0dcc469b0b041659877718920&projectid=MGXE5uueSnb&perm=Owner#/page/D147cfae337c100d6016eff71dc015227) - Low fidelity wireframes
+- [Database Diagram](https://dbdiagram.io/d/62c2aa8669be0b672c937241) - To view the relations between tables
+- [Project Board](https://github.com/users/geekshikha/projects/4) - To view the user stories
 
 ---
 
 <h2>Backend Git Repo</h2>
 
-- [Araksha Server Repo on Github]("https://github.com/geekshikha/Portfolio-Project-Araksha-Backend")
+- [Araksha Server Repo on Github](https://github.com/geekshikha/Portfolio-Project-Araksha-Backend)
