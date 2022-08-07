@@ -28,7 +28,7 @@ const TrackingPage = () => {
 
   return (
     <div style={{ textAlign: "center", height: "70vh", marginTop: "30px" }}>
-      <Title>Find Your Loved Ones ❤️</Title>
+      <Title>Find My Stuff 🔍</Title>
       <TrackingForm />
       <Button
         style={{ marginRight: 50 }}

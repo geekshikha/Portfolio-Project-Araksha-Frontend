@@ -17,7 +17,9 @@ const Footer = () => {
     <FooterContainer>
       <FooterSubscription>
         <SocialLogo to="/">Araksha</SocialLogo>
-        <FooterSubHeading>We care for your loved ones!</FooterSubHeading>
+        <FooterSubHeading>
+          Find it. SuperEasy way to keep track of your stuff!
+        </FooterSubHeading>
       </FooterSubscription>
 
       <SocialMedia>
